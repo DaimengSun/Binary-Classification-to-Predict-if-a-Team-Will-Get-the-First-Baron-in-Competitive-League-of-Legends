@@ -40,7 +40,7 @@ In contrast to the baseline classifier, three more features is added in attempt 
 In addition to new features, to improve the classifier's performance (accuracy), GridSearchCV from sklearn.model_selection is used to decide the best-performing hyperparameters for the decision tree. Hyperparameter tested include 'max_depth': [2, 3, 4, 5, 6, 8, 10, 15, 18, None], 'min_samples_split': [2, 5, 10, 20, 50, 100, 200], and 'criterion': ['gini', 'entropy']. Each combination of hyperparameters are fitted using training data and their performance is tested using cross-validation with k-fold of five..<br><br>
 After finding out the best performing hyperparameters, the model is then fitted using training data, with features as ['firstdragon', 'side','xpdiffat15', 'golddiffat15', 'heralds'], and with hyperparameters as {'criterion': 'gini', 'max_depth': 4, 'min_samples_split': 2}. "firstdragon" and "side" are one hot encoded, "heralds" is binarized, "xpdiffat15" and "golddiffat15" are used as is.<br>
 Confusion matrix of final model:
-<iframe src="assets/confusion matrix.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/confusion.html" width=800 height=600 frameBorder=0></iframe>
 
 Improvement investigation: The final model has an accuracy of 0.691 on the testing data, which achieved a 0.006 improvement on accuracy.
 
