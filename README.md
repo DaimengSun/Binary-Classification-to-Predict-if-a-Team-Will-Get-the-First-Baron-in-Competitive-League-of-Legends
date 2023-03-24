@@ -10,13 +10,13 @@ Our exploratory data analysis on this dataset can be found <a href="https://daim
 A binary classifier is built based on the real-world League of Legends dataset, to predict if a team will get the first baron in the game. <br><br> The response variable is a boolean indicating if a team will get the first baron in the game. <br><br> Accuracy is used to evaluate the model because correct predictions and incorrect predictions are equally detrimental. Thus, the model is evaluated upon both true and false positives and negatives. $$\text{accuracy} = \frac{TP + TN}{TP+FP+FN+TN}$$<br><br> Features that contain information post baron spawn (20 minutes into game), such as total gold difference, dragon kills, tower taken, are excluded from potential features becasue they are information we wouldn't know at the time of prediction. Features that contain overall game information, such as game result and game length, are also excluded because of same reason. <br><br> To reduce multicollinearity, features that exhibit strong correlation are also excluded from potential features. For example, cs difference at 15 and gold difference at 10 are excluded because gold difference at 15 is selected as one of the potential features.
 
 Dataframe after cleaning:<br>
-| gameid                |   participantid |   patch | side   | firstdragon   |   golddiffat15 |   xpdiffat15 |   heralds |   firstbaron |
-|:----------------------|----------------:|--------:|:-------|:--------------|---------------:|-------------:|----------:|-------------:|
-| ESPORTSTMNT01_2690210 |             100 |   12.01 | Blue   | False         |            107 |        -1617 |         2 |            0 |
-| ESPORTSTMNT01_2690210 |             200 |   12.01 | Red    | True          |           -107 |         1617 |         0 |            0 |
-| ESPORTSTMNT01_2690219 |             100 |   12.01 | Blue   | False         |          -1763 |         -906 |         1 |            0 |
-| ESPORTSTMNT01_2690219 |             200 |   12.01 | Red    | True          |           1763 |          906 |         1 |            1 |
-| ESPORTSTMNT01_2690227 |             100 |   12.01 | Blue   | True          |           1191 |         2298 |         1 |            1 |
+|   patch | side   | firstdragon   |   golddiffat15 |   xpdiffat15 |   heralds |   firstbaron |
+|--------:|:-------|:--------------|---------------:|-------------:|----------:|-------------:|
+|   12.01 | Blue   | False         |            107 |        -1617 |         2 |            0 |
+|   12.01 | Red    | True          |           -107 |         1617 |         0 |            0 |
+|   12.01 | Blue   | False         |          -1763 |         -906 |         1 |            0 |
+|   12.01 | Red    | True          |           1763 |          906 |         1 |            1 |
+|   12.01 | Blue   | True          |           1191 |         2298 |         1 |            1 |
 
 ---
 ### Baseline Model
